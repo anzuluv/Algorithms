@@ -1,0 +1,19 @@
+#selection sort
+
+def find_smallest(sample):
+    min = sample[0]
+    ind = 0
+    for i in range(0,len(sample)):
+        if min > sample[i]:
+            min = sample[i]
+            ind = i
+    return ind
+
+def select_sort(og):
+    nw = []
+    while len(og)>0:
+        smallest = find_smallest(og)
+        nw.append(og.pop(smallest))
+    return nw
+
+print(select_sort([5,3,6,2,10]))

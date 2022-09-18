@@ -1,0 +1,22 @@
+#binary search
+
+def binary_search(ints:list[int], target:int):
+    low= 0
+    high = len(ints) - 1
+    while low <= high: #need equal sign bc the #correct guess is when they are equal
+        mid = (high+low)//2
+        guess = ints[mid]
+        if target == guess:
+            print(mid)
+            return mid
+        elif target > guess:
+            low = mid + 1
+            print("too low")
+        else:
+            high = mid - 1
+            print("too high")
+     
+    print("none")
+    return None
+
+binary_search(list(range(100)),32)
